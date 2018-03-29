@@ -1,0 +1,48 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/list_preference_entries"
+        android:entryValues="@array/list_preference_entry_values"
+        android:key="how_many_papers"
+        android:title="How many papers?" />
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="notifications_switch"
+        android:title="Notifications" /><![CDATA["
+        android:key="notifications_switch"
+        android:title="Notifications string" />
+
+    ]]>
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="Alice"
+        android:dependency="notifications_switch"
+        android:inputType="textCapWords"
+        android:key="notification_topics"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary="Space-separated, no commas"
+        android:title="Notification Keywords" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:dependency="notifications_switch"
+        android:key="citation_checkbox"
+        android:title="Citation Notifications" />
+    <EditTextPreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:capitalize="words"
+        android:defaultValue="Bob"
+        android:dependency="citation_checkbox"
+        android:inputType="textCapWords"
+        android:key="last_name"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Last Name" />
+</PreferenceScreen>
